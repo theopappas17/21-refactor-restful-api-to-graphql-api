@@ -2,18 +2,12 @@ const { User, Book } = require('../models');
 
 const resolvers = {
   Query: {
-    me: async () => {
-      return await User.find();
-    },
+    me: async () => {return await User.find({})},
   },
 };
 
-//   Mutation: {
-//     addUser: async (parent, { username, email}) => {
-//       const user = await User.create({ username, email});
-//       return { token, user };
-//     },
-//   },  
-// };
+  Mutation: {
+    createUser: async (parent, args) => await User.create(args);
+};
 
 module.exports = resolvers;
