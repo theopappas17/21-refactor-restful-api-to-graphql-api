@@ -10,7 +10,7 @@ import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 
 const client = new ApolloClient({
-  link: "/graphql",
+  uri: "/graphql",
   cache: new InMemoryCache(),
 });
 
